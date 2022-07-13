@@ -4,7 +4,8 @@ name: Update Bridgecrew Policies
 on:
   # Triggers the workflow on push but only for the main branch
   push:
-    branches: [ main ]
+    branches:
+    - '**'
     paths-ignore:
     - '.github/workflows/main.yml'
     - '**/README.md'
