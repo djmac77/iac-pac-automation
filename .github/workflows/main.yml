@@ -48,17 +48,7 @@ jobs:
             git config user.name "${GITHUB_ACTOR}"
             git commit -m "policy renamed to $id.yml"
             git push
-      - name: Checkout repo
-        uses: actions/checkout@v2
-
-      - name: Run Prisma Cloud 
-        id: Prisma Cloud
-        uses: bridgecrewio/checkov-action@master 
-        env:
-          PRISMA_API_URL: https://api.eu.prismacloud.io
-        with:
-          api-key: ${{ secrets.BC_API_KEY }}
-          done
+            done
       # Update policy
       - name: Update Policy
         if: ${{ steps.files_modified.outputs.modified }}
